@@ -13,10 +13,13 @@ MongoClient.connect('mongodb://zellwk:zellwk@ds047955.mongolab.com:47955/star-wa
   })
 })
 
+
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use(express.static('public'))
+
+//every thing is fine
 
 app.get('/', (req, res) => {
   db.collection('quotes').find().toArray((err, result) => {
